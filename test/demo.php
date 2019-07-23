@@ -1,17 +1,15 @@
-XL authServer client
-=======================
-##### 当前支持趣头条 `qtt` 微信 `weixin`,扩展中. . .
+<?php
+/**
+ * Create by PhpStorm
+ * Author Aaron z
+ * Date: 2019-07-23
+ * Time: 10:19
+ */
 
-- Install
+require_once "../vendor/autoload.php";
 
-~~~
-composer require xlwl/authserver
-~~~
-
-- Example
-
-~~~php
 use xlauth\serverFactory;
+
 $serverFactory = new serverFactory('test'); /*实例化平台*/
 
 $testServer = $serverFactory->getServer();  /*获取服务*/
@@ -29,14 +27,3 @@ try{
 }
 
 print_r($ret);
-~~~
-
-- Explain
-
-~~~php
-//不同平台认证需要参数不同，需要根据实际情况设置
-$testServer->setParams(['code' => $code]); /*微信*/
-$testServer->setParams(['ticke' => $ticket,'paltform' => $platform]);   /*趣头条*/
-//或者......
-$testServer->setSessionKey($sessionKey)->setOtherParam($param)
-~~~
