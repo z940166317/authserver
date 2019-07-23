@@ -1,0 +1,20 @@
+{
+    "name": "xlwl/authserver",
+    "description": "Unified Authorization Service SDK",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "authors": [
+        {
+            "name": "Aaron z",
+            "email": "940166317@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "xlauth\\": "src/"
+        },
+        "files": ["src/common.php","src/config/config.php"]
+    }
+}
