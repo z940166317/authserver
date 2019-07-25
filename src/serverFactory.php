@@ -9,13 +9,15 @@
 namespace xlauth;
 
 
+use xlauth\server\meizuServer;
+use xlauth\server\oppoServer;
 use xlauth\server\qttServer;
 use xlauth\server\testServer;
 use xlauth\server\weixinServer;
 
 class serverFactory
 {
-    const PLATFORMARR = ['qtt','weixin','test'];
+    const PLATFORMARR = ['qtt','weixin','test','oppo','meizu']; /*当前支持的服务*/
 
     private $platformName;
 
@@ -34,17 +36,31 @@ class serverFactory
         $this->platformName = $platformName;
     }
 
+    /**
+     * 实例化具体服务
+     * @return meizuServer|oppoServer|qttServer|weixinServer
+     * @throws \Exception
+     */
     public function getServer(){
 
         switch ($this->platformName){
+            case 'test':
+                $authServer = new testServer();
+                break;
             case 'qtt':
                 $authServer = new qttServer();
                 break;
             case 'weixin':
                 $authServer = new weixinServer();
                 break;
+            case 'oppo':
+                $authServer = new oppoServer();
+                break;
+            case 'meizu':
+                $authServer = new meizuServer();
+                break;
             default:
-                $authServer = new testServer();
+                throw new \Exception('invalid platform');
                 break;
         }
 

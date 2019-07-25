@@ -6,7 +6,7 @@
  * Time: 10:19
  */
 
-require_once "../vendor/autoload.php";
+require_once "../../vendor/autoload.php";
 
 use xlauth\serverFactory;
 
