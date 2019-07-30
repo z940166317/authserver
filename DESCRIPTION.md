@@ -22,3 +22,5 @@ $weixinServer->serParams(['wxCode' => $wxCode]);
 * 必要参数 `token`
 #### oppo
 * 必要参数 `token`
+#### device
+* 必要参数 `deviceId`

@@ -40,3 +40,4 @@ $testServer->setParams(['ticke' => $ticket,'paltform' => $platform]);   /*趣头
 //或者......
 $testServer->setSessionKey($sessionKey)->setOtherParam($param)
 ~~~
+[Detailed](./DESCRIPTION.md)
