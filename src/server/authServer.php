@@ -18,6 +18,9 @@ class authServer implements authServerInterface
     private $conf;
     private $headers;
 
+    private $host;
+    private $port;
+
     protected $params;
     protected $response;
     protected $client;
@@ -93,11 +96,27 @@ class authServer implements authServerInterface
         return $this->params;
     }
 
+    public function setHost(string $host){
+        $this->host = $host;
+        return $this;
+    }
+
+    public function setPort($port){
+        $this->port = $port;
+        return $this;
+    }
+
     private function getHost(){
+        if (!empty($this->host)){
+            return $this->host;
+        }
         return $this->conf->get('data.host');
     }
 
     private function getPort(){
+        if (!empty($port)){
+            return $this->port;
+        }
         return $this->conf->get('data.port');
     }
 

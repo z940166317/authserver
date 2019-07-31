@@ -9,7 +9,7 @@
 return [
 
     'host' => '127.0.0.1',
-    'port' => 9501,
+    'port' => 19502,
 
     'api' => [
         'code' => '/api/code',

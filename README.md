@@ -8,16 +8,19 @@ XL authServer client
 composer require xlwl/authserver
 ~~~
 
-- Example
+- Quick start
 
 ~~~php
 use xlauth\serverFactory;
+
 $serverFactory = new serverFactory('test'); /*实例化平台*/
 
 $testServer = $serverFactory->getServer();  /*获取服务*/
 $testServer->setAppCode('test');    /*设置app*/
 
 $testServer->setClientId('s5oK0ruYn3HAhhycmaZh')->setSecret('9VMDvvVWPLpRcWKJmpzzKNAsorZl0Mu2k0u0f4aoosKSqGllKH')->setParams(['sessionKey' => '3ae285219845205c98985081a75439405caf64a8']); /*设置clientId、secret、请求参数*/
+//or set host port
+$testServer->setHost('http://www.xxx.com')->setPort('')->setClientId('s5oK0ruYn3HAhhycmaZh')->setSecret('9VMDvvVWPLpRcWKJmpzzKNAsorZl0Mu2k0u0f4aoosKSqGllKH')->setParams(['sessionKey' => '3ae285219845205c98985081a75439405caf64a8']); /*设置clientId、secret、请求参数*/
 
 try{
     $ret = $testServer->token();    /*获取token和用户信息*/
