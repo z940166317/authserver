@@ -114,7 +114,7 @@ class authServer implements authServerInterface
     }
 
     private function getPort(){
-        if (!empty($port)){
+        if (!empty($this->port)){
             return $this->port;
         }
         return $this->conf->get('data.port');

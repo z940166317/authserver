@@ -9,16 +9,18 @@
 namespace xlauth;
 
 
+use xlauth\server\baiduServer;
 use xlauth\server\deviceServer;
 use xlauth\server\meizuServer;
 use xlauth\server\oppoServer;
 use xlauth\server\qttServer;
+use xlauth\server\sqqServer;
 use xlauth\server\testServer;
 use xlauth\server\weixinServer;
 
 class serverFactory
 {
-    const PLATFORMARR = ['qtt','weixin','test','oppo','meizu','device']; /*当前支持的服务*/
+    const PLATFORMARR = ['qtt','weixin','test','oppo','meizu','device','baidu','sqq']; /*当前支持的服务*/
 
     private $platformName;
 
@@ -62,6 +64,12 @@ class serverFactory
                 break;
             case 'device':
                 $authServer = new deviceServer();
+                break;
+            case 'baidu':
+                $authServer = new baiduServer();
+                break;
+            case 'sqq':
+                $authServer = new sqqServer();
                 break;
             default:
                 throw new \Exception('invalid platform');

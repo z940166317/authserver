@@ -1,6 +1,6 @@
 XL authServer client
 =======================
-##### 当前支持趣头条 `qtt` 微信 `weixin` 魅族 `meizu` OPPO `oppo` 扩展中. . .
+##### 当前支持趣头条 `qtt` 微信 `weixin` 魅族 `meizu` OPPO `oppo` 百度 `baidu`  手QQ `sqq` 扩展中. . .
 
 - Install
 

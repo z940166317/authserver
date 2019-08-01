@@ -24,3 +24,13 @@ $weixinServer->serParams(['wxCode' => $wxCode]);
 * 必要参数 `token`
 #### device
 * 必要参数 `deviceId`
+#### baidu
+* 必要参数 `code`
+~~~php
+$weixinServer->serParams(['bdCode' => $wxCode]);
+~~~
+#### sqq
+* 必要参数 `code`
+~~~php
+$weixinServer->serParams(['sqqCode' => $wxCode]);
+~~~
